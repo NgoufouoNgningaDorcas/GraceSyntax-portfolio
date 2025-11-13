@@ -1,7 +1,8 @@
 import { RevealOnScroll } from "../RevealOnScroll"
+import profile from "../../assets/profile.jpeg"
 
 export const Home = () => {
-    return <section id="home" className="min-h-screen flex items-center justify-center relative">
+    return <section id="home" className="min-h-screen flex items-center justify-center relative gap-70 p-7 md:flex-row md:gap-8 grid grid-cols-1 md:grid-cols-2 gap-20">
 
         <RevealOnScroll>
             <div className="text-center z-10 px-4">
@@ -27,6 +28,15 @@ export const Home = () => {
                         Contact me
                     </a>
                 </div>
+            </div>
+        </RevealOnScroll>
+        <RevealOnScroll>
+            <div className="relative w-[410px] h-[410px] rounded-full overflow-hidden border-4 border-blue-900 shadow-lg hover:scale-105 transition-transform duration-300">
+                <img
+                    src={profile}
+                    alt="GraceSyntax"
+                    className="w-full h-full object-cover object-center rounded-full"
+                />
             </div>
         </RevealOnScroll>
     </section>
