@@ -1,37 +1,43 @@
 {
-  "name": "my-portfolio",
-  "homepage": "https://NgoufouoNgningaDorcas.github.io/GraceSyntax-portfolio/",
+  "name": "react-example",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "node server.js",
     "build": "vite build",
-    "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run dev",
-    "deploy": "gh-pages -d dist"
+    "lint": "eslint .",
+    "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.16",
+    "@google/genai": "^1.29.0",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
+    "@tailwindcss/vite": "^4.1.14",
+    "@vitejs/plugin-react": "^5.0.4",
+    "better-sqlite3": "^12.4.1",
+    "canvas-confetti": "^1.9.4",
+    "dotenv": "^17.2.3",
     "emailjs-com": "^3.2.0",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "express": "^4.21.2",
+    "framer-motion": "^12.34.3",
+    "lucide-react": "^0.546.0",
+    "motion": "^12.23.24",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.5",
+    "recharts": "^3.7.0",
+    "three": "^0.183.2",
+    "vite": "^6.2.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.36.0",
-    "@tailwindcss/postcss": "^4.1.16",
-    "@types/react": "^19.1.16",
-    "@types/react-dom": "^19.1.9",
-    "@vitejs/plugin-react": "^5.0.4",
     "autoprefixer": "^10.4.21",
-    "eslint": "^9.36.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.22",
-    "gh-pages": "^6.3.0",
-    "globals": "^16.4.0",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.16",
-    "vite": "^7.1.7"
+    "eslint": "^9.39.3",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "tailwindcss": "^4.1.14",
+    "vite": "^6.2.0"
   }
 }

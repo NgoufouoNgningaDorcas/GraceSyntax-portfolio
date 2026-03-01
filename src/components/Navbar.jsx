@@ -1,44 +1,64 @@
-import { useEffect } from "react"
+import React, { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 
 export const Navbar = ({ menuOpen, setIsMenuOpen }) => {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
-    useEffect(() => {
-        document.body.style.overflow = menuOpen ? "hidden" : ""
-    }, [menuOpen])
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+  }, [menuOpen]);
 
-    return <nav className="fixed top-0 w-full z-40 bg-[rgba(10,10,10,0.8)] backdrop-blur-lg border-b border-white/10 shadow-lg">
-        <div className="max-w-5xl mx-auto px-4">
-            <div className="flex justify-between items-center h-16">
-                <a href="#home" className="font-mono text-xl font-bold text-white">
-                    {" "}
-                    Grace<span className="text-blue-500">Syntax</span>
+  const navItems = [
+    { name: 'Home', href: isHomePage ? '#home' : '/' },
+    { name: 'About', href: isHomePage ? '#about' : '/#about' },
+    { name: 'Services', href: isHomePage ? '#services' : '/#services' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'Testimonials', href: isHomePage ? '#testimonials' : '/#testimonials' },
+    { name: 'Contact', href: isHomePage ? '#contact' : '/#contact' },
+  ];
+
+  return (
+    <nav className="fixed top-0 w-full z-50 glass border-b border-white/5 shadow-2xl">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex justify-between items-center h-20">
+          <Link to="/" className="font-display text-2xl font-bold text-white tracking-tighter hover:opacity-80 transition-opacity">
+            Grace<span className="text-blue-500">Syntax</span>
+          </Link>
+
+          {/* Mobile Toggle */}
+          <button 
+            className="md:hidden text-zinc-400 hover:text-white transition-colors"
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+          >
+            {menuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navItems.map((item) => (
+              item.href.startsWith('#') || (item.href.startsWith('/#') && !isHomePage) ? (
+                <a 
+                  key={item.name}
+                  href={item.href} 
+                  className="text-sm font-medium text-zinc-400 hover:text-blue-400 transition-all hover:-translate-y-0.5"
+                >
+                  {item.name}
                 </a>
-
-                <div className="w-7 h-5 relative cursor-pointer z-40 md:hidden"
-                    onClick={() => setIsMenuOpen((prev) => !prev)}>
-                    &#9776;
-                </div>
-
-                <div className="hidden  md:flex items-center space-x-8">
-                    <a href="#home" className="text-gray-300 hover:text-white transition-colors">
-                        {" "}
-                        Home{" "}
-                    </a>
-                    <a href="#about" className="text-gray-300 hover:text-white transition-colors">
-                        {" "}
-                        About{" "}
-                    </a>
-                    <a href="#project" className="text-gray-300 hover:text-white transition-colors">
-                        {" "}
-                        Projects{" "}
-                    </a>
-                    <a href="#contact" className="text-gray-300 hover:text-white transition-colors">
-                        {" "}
-                        Contact{" "}
-                    </a>
-                </div>
-            </div>
-
+              ) : (
+                <Link 
+                  key={item.name}
+                  to={item.href} 
+                  className="text-sm font-medium text-zinc-400 hover:text-blue-400 transition-all hover:-translate-y-0.5"
+                >
+                  {item.name}
+                </Link>
+              )
+            ))}
+          </div>
         </div>
+      </div>
     </nav>
-}
+  );
+};

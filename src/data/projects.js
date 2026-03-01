@@ -1,0 +1,80 @@
+export const projects = [
+  {
+    id: "tradify",
+    title: "Tradify",
+    description: "An interactive cultural education platform digitizing Cameroon's heritage. Features AI-powered assistants and gamified learning.",
+    fullDescription: "Tradify is a comprehensive digital platform dedicated to preserving and promoting the rich cultural heritage of Cameroon. It leverages modern web technologies to create an immersive learning experience. The platform includes AI-driven cultural assistants that can answer questions about local traditions, history, and languages. Gamification elements like quizzes and achievement badges encourage younger generations to engage with their roots. Built with scalability in mind, it uses a microservices architecture to handle high traffic and media-rich content.",
+    tech: ["React", "Node.js", "Tailwind", "Docker", "PostgreSQL"],
+    image: "https://picsum.photos/seed/tradify/1200/800",
+    link: "https://tradify-demo.example.com",
+    github: "https://github.com/NgoufouoNgningaDorcas/tradify",
+    year: "2024",
+    role: "Lead Developer",
+    client: "Cultural Heritage Initiative"
+  },
+  {
+    id: "examlink",
+    title: "ExamLink",
+    description: "Web-based platform streamlining candidate registration and exam processing for educational institutions.",
+    fullDescription: "ExamLink solves the logistical challenges of large-scale educational examinations. It provides a secure, end-to-end workflow for candidate registration, payment processing, hall ticket generation, and result management. The system features a robust administrative dashboard for institutions to monitor registration trends and manage exam centers. Security is a top priority, with multi-factor authentication and encrypted data storage to prevent fraud and data breaches.",
+    tech: ["React", "Node.js", "MySQL", "Express", "Redis"],
+    image: "https://picsum.photos/seed/exam/1200/800",
+    link: "https://examlink-demo.example.com",
+    github: "https://github.com/NgoufouoNgningaDorcas/examlink",
+    year: "2023",
+    role: "Full Stack Engineer",
+    client: "Ministry of Secondary Education"
+  },
+  {
+    id: "cloud-platform",
+    title: "Cloud Platform",
+    description: "A robust cloud infrastructure project focusing on scalability and microservices architecture.",
+    fullDescription: "This project involved designing and implementing a highly available cloud infrastructure on AWS. It utilizes Kubernetes for container orchestration, ensuring that services can scale automatically based on demand. The architecture follows a microservices pattern, allowing for independent deployment and scaling of different components. Monitoring and logging are integrated using the ELK stack and Prometheus, providing deep visibility into system performance and health.",
+    tech: ["AWS", "Docker", "Kubernetes", "Terraform", "Go"],
+    image: "https://picsum.photos/seed/cloud/1200/800",
+    link: "https://cloud-demo.example.com",
+    github: "https://github.com/NgoufouoNgningaDorcas/cloud-infra",
+    year: "2023",
+    role: "DevOps Engineer",
+    client: "TechScale Solutions"
+  },
+  {
+    id: "ai-cultural-hub",
+    title: "AI Cultural Hub",
+    description: "Integrating advanced AI models to preserve and translate regional languages and traditions.",
+    fullDescription: "The AI Cultural Hub is an ambitious project that uses machine learning to bridge the gap between traditional knowledge and modern technology. It features custom-trained NLP models for regional Cameroonian languages, enabling real-time translation and transcription of oral histories. The platform also includes an image recognition system that can identify traditional artifacts and provide detailed historical context. This project represents a significant step forward in using AI for cultural preservation.",
+    tech: ["Python", "PyTorch", "FastAPI", "React", "MongoDB"],
+    image: "https://picsum.photos/seed/ai/1200/800",
+    link: "https://ai-hub-demo.example.com",
+    github: "https://github.com/NgoufouoNgningaDorcas/ai-cultural-hub",
+    year: "2024",
+    role: "AI Researcher & Developer",
+    client: "UNESCO Partner"
+  },
+  {
+    id: "healthsync",
+    title: "HealthSync",
+    description: "A telemedicine application connecting patients with local doctors in real-time.",
+    fullDescription: "HealthSync is a mobile-first telemedicine platform designed to improve healthcare access in underserved areas. It supports secure video consultations, digital prescriptions, and integrated health record management. The app includes an offline-first mode for areas with unstable internet connections, synchronizing data once a connection is re-established. It also features a directory of local pharmacies and laboratories, creating a complete digital healthcare ecosystem.",
+    tech: ["React Native", "Firebase", "Node.js", "WebRTC"],
+    image: "https://picsum.photos/seed/health/1200/800",
+    link: "https://healthsync-app.example.com",
+    github: "https://github.com/NgoufouoNgningaDorcas/healthsync",
+    year: "2022",
+    role: "Mobile Developer",
+    client: "HealthFirst NGO"
+  },
+  {
+    id: "ecotrack",
+    title: "EcoTrack",
+    description: "Environmental monitoring system using IoT sensors to track air quality in urban areas.",
+    fullDescription: "EcoTrack is an IoT-based solution for real-time environmental monitoring. It consists of a network of low-cost air quality sensors deployed across urban centers. These sensors transmit data via LoRaWAN to a central server, where it is processed and visualized on a public dashboard. The system provides actionable insights for city planners and health officials, helping to identify pollution hotspots and evaluate the effectiveness of environmental policies.",
+    tech: ["Python", "C++", "MQTT", "InfluxDB", "Grafana", "React"],
+    image: "https://picsum.photos/seed/eco/1200/800",
+    link: "https://ecotrack-dashboard.example.com",
+    github: "https://github.com/NgoufouoNgningaDorcas/ecotrack",
+    year: "2022",
+    role: "IoT Systems Engineer",
+    client: "Smart City Initiative"
+  }
+];

@@ -1,90 +1,120 @@
+import React from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
-import React from "react"
+import { Code2, Cpu, GraduationCap, Briefcase, Globe, Zap } from "lucide-react";
+import { About3D } from "../About3D";
 
 export const About = () => {
+  const techStack = [
+    "React", "Next.js", "TypeScript", "Node.js", "Python", 
+    "AWS", "Docker", "PostgreSQL", "MongoDB", "TailwindCSS",
+    "GraphQL", "FastAPI", "TensorFlow", "Git"
+  ];
 
-    const frontendSkills = ["React", "Vue", "TypeScript", "TailwindCSS", "Swelte"];
-    const backendSkills = ["Node.js", "Python", "MondoDB", "AWS", "GraphQL"];
+  return (
+    <section id="about" className="py-20 md:py-32 px-6 relative overflow-hidden">
+      {/* Background 3D for section */}
+      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-1/3 h-full opacity-20 pointer-events-none">
+        <About3D />
+      </div>
 
-    return (
-        <section id="about" className="min-h-screen flex items-center justify-center py-20">
-            <RevealOnScroll>
-                <div className="max-w-3xl mx-auto px-4">
-                    <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-                        {" "}
-                        About Me
-                    </h2>
-                    <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
-                        <p className="text-gray-300 mb-6">
-                            I’m a Level Two (second-year) Software Engineering student at Siantou University.
-                            I’m building solid foundations in programming, data structures, and software design while
-                            getting hands-on with web and mobile development. I enjoy solving problems,
-                            collaborating on small team projects, and turning ideas into working prototypes.
-                        </p>
+      <div className="max-w-6xl mx-auto relative z-10">
+        <RevealOnScroll>
+          <div className="flex flex-col md:flex-row gap-12 mb-20 items-center text-center md:text-left">
+            <div className="flex-1 order-2 md:order-1">
+              <h2 className="text-4xl md:text-6xl font-display font-bold mb-6 tracking-tighter text-gradient">
+                The Stack & <br /> The Story.
+              </h2>
+              <p className="text-zinc-500 text-lg max-w-xl leading-relaxed mx-auto md:mx-0">
+                Bridging the gap between complex backend logic and intuitive frontend experiences. 
+                Software Engineering student at Siantou University, passionate about building 
+                resilient systems that solve real-world problems.
+              </p>
+            </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div className="rounded-xl p-6 hover:translate-y-1 transition-all">
-                                <h3 className="text-xl font-bold mb-4">
-                                    Frontend
-                                </h3>
-                                <div className="flex flex-wrap gap-2">
-                                    {frontendSkills.map((tech, key) => (
-                                        <span key={key} className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,224,0.2)] transition">
-                                            {tech}
-                                        </span>
+            {/* Profile Picture moved from Home */}
+            <div className="relative group w-48 h-48 md:w-64 md:h-64 shrink-0 order-1 md:order-2">
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+              <div className="relative w-full h-full rounded-full overflow-hidden border border-white/10 glass">
+                <img 
+                  src="https://picsum.photos/seed/grace-profile/800/1000" 
+                  alt="GraceSyntax Profile" 
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            </div>
+          </div>
 
-                                    ))}
-                                </div>
-                            </div>
-
-                            <div className="rounded-xl p-6 hover:translate-y-1 transition-all">
-                                <h3 className="text-xl font-bold mb-4">
-                                    Backend
-                                </h3>
-                                <div className="flex flex-wrap gap-2">
-                                    {backendSkills.map((tech, key) => (
-                                        <span key={key} className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,224,0.2)] transition">
-                                            {tech}
-                                        </span>
-
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                        <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-                            <h3 className="text-xl font-bold mb-4">
-                                🎓  Education
-                            </h3>
-                            <ul className="list-disc list-inside text-gray-300 space-y-2">
-                                <li>
-                                    <strong>B.S computer science</strong> -XYZ University [2016-2020]
-                                </li>
-                                <li>
-                                    Relevant coursework: Data Structures, Web programming, c++ programming, Networking,.........
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-                            <h3 className="text-xl font-bold mb-4">
-                                💼 Work experience
-                            </h3>
-                            <div className="space-y-4 text-gray-300">
-                                <div>
-                                    <h4 className="font-semibold"> Software Egineer at ABC corp (2019)</h4>
-                                    <p>Developed and maintained microservices for cloud-base applications.</p>
-                                </div>
-                                <div>
-                                    <h4 className="font-semibold"> Intern at ABC corp [2020-Present]</h4>
-                                    <p>Assisted in building culture AI and integrading the AI mode of it</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+          {/* Bento Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-20">
+            {/* Bio - Large */}
+            <div className="md:col-span-2 md:row-span-2 glass p-6 md:p-10 rounded-[2rem] flex flex-col justify-between border-glow">
+              <div className="space-y-6">
+                <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-white">
+                  <Globe size={24} />
                 </div>
-            </RevealOnScroll>
-        </section>
-    )
-}
+                <p className="text-2xl text-white font-medium leading-tight">
+                  Building scalable systems with a focus on performance and clean architecture.
+                </p>
+              </div>
+              <div className="space-y-4 mt-10">
+                <p className="text-zinc-500">
+                  Based in Yaoundé, working globally. I specialize in full-stack development 
+                  and AI integration. My journey started with a fascination for how data 
+                  flows through the web, leading me to master modern frameworks and cloud 
+                  technologies.
+                </p>
+                <p className="text-zinc-500">
+                  I believe in continuous learning and community contribution. When I'm not 
+                  coding, I'm exploring new architectural patterns or mentoring junior 
+                  developers in local tech hubs.
+                </p>
+              </div>
+            </div>
+
+            {/* Education */}
+            <div className="glass p-8 rounded-[2rem] border-glow">
+              <GraduationCap className="text-zinc-500 mb-6" size={24} />
+              <h3 className="text-white font-bold mb-2">Education</h3>
+              <p className="text-zinc-500 text-sm">B.S. Software Engineering @ Siantou University</p>
+            </div>
+
+            {/* Experience */}
+            <div className="glass p-8 rounded-[2rem] border-glow">
+              <Briefcase className="text-zinc-500 mb-6" size={24} />
+              <h3 className="text-white font-bold mb-2">Experience</h3>
+              <p className="text-zinc-500 text-sm">Software Intern @ ABC Corp</p>
+            </div>
+
+            {/* Skills - Wide */}
+            <div className="md:col-span-2 glass p-8 rounded-[2rem] flex items-center justify-between border-glow">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500">
+                  <Zap size={20} />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold">Fast Learner</h3>
+                  <p className="text-zinc-500 text-sm">Adapting to new stacks rapidly.</p>
+                </div>
+              </div>
+              <div className="text-zinc-700 font-display text-4xl font-bold">99%</div>
+            </div>
+          </div>
+
+          {/* Tech Marquee */}
+          <div className="relative overflow-hidden py-10 border-y border-white/5">
+            <div className="flex animate-marquee whitespace-nowrap">
+              {[...techStack, ...techStack].map((tech, i) => (
+                <span key={i} className="text-zinc-700 text-4xl md:text-6xl font-display font-bold mx-10 uppercase tracking-tighter hover:text-white transition-colors cursor-default">
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10"></div>
+            <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10"></div>
+          </div>
+        </RevealOnScroll>
+      </div>
+    </section>
+  );
+};
