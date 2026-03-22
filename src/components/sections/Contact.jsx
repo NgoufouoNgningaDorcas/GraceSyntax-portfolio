@@ -8,7 +8,7 @@ export const Contact = () => {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const email = "gracesyntax@example.com";
+  const email = "gracesyntax0@gmail.com";
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(email);
