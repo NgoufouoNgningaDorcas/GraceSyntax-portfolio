@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
+import emailjs from '@emailjs/browser';
 import { Send, Mail, MessageCircle, ArrowRight, Copy, Check, MapPin, Github, Linkedin, Calendar, Loader2 } from "lucide-react";
 import { Contact3D } from "../Contact3D";
 
@@ -19,14 +20,17 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
 
-      if (response.ok) {
+    try {
+      // Note: It's generally recommended to hide your service/template/user IDs in environment variables
+      const result = await emailjs.send(
+        'YOUR_SERVICE_ID', // Replace with your EmailJS Service ID
+        'YOUR_TEMPLATE_ID', // Replace with your EmailJS Template ID
+        formData,
+        'YOUR_USER_ID' // Replace with your EmailJS User ID (Public Key)
+      );
+
+      if (result.status === 200) {
         setSubmitted(true);
         setFormData({ name: "", email: "", message: "" });
         setTimeout(() => setSubmitted(false), 5000);
