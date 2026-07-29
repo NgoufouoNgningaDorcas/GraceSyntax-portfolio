@@ -22,12 +22,11 @@ export const Contact = () => {
     setSubmitting(true);
 
     try {
-      // Note: It's generally recommended to hide your service/template/user IDs in environment variables
       const result = await emailjs.send(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS Service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS Template ID
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         formData,
-        'YOUR_USER_ID' // Replace with your EmailJS User ID (Public Key)
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
       if (result.status === 200) {
