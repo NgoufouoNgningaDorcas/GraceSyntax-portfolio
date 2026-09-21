@@ -1,5 +1,6 @@
 import React from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
+import {profile} from "../../assets";
 import { Code2, Cpu, GraduationCap, Briefcase, Globe, Zap } from "lucide-react";
 import { About3D } from "../About3D";
 
@@ -36,7 +37,7 @@ export const About = () => {
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
               <div className="relative w-full h-full rounded-full overflow-hidden border border-white/10 glass">
                 <img 
-                  src="https://picsum.photos/seed/grace-profile/800/1000" 
+                  src={profile} 
                   alt="GraceSyntax Profile" 
                   className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
                   referrerPolicy="no-referrer"
