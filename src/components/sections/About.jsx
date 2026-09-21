@@ -1,6 +1,6 @@
 import React from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
-import {profile} from "../../assets";
+import profile from "../../assets";
 import { Code2, Cpu, GraduationCap, Briefcase, Globe, Zap } from "lucide-react";
 import { About3D } from "../About3D";
 
