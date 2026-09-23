@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { Quote, User, Briefcase, MessageSquare, Send, Check, Zap, Loader2 } from "lucide-react";
 import { Testimonials3D } from "../Testimonials3D";
+import { defaultTestimonials } from "../../data/testimonials";
 
 export const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
@@ -23,6 +24,7 @@ export const Testimonials = () => {
       setTestimonials(data);
     } catch (error) {
       console.error("Error fetching testimonials:", error);
+      setTestimonials(defaultTestimonials);
     } finally {
       setLoading(false);
     }
