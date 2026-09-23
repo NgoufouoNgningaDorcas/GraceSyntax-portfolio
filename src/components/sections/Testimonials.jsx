@@ -15,7 +15,10 @@ export const Testimonials = () => {
 
   const fetchTestimonials = async () => {
     try {
-      const response = await fetch("/api/testimonials");
+      const response = await fetch(`${import.meta.env.BASE_URL}api/testimonials`);
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
       const data = await response.json();
       setTestimonials(data);
     } catch (error) {
@@ -38,7 +41,7 @@ export const Testimonials = () => {
         avatar: `https://picsum.photos/seed/${formData.name}/100/100`
       };
       
-      const response = await fetch("/api/testimonials", {
+      const response = await fetch(`${import.meta.env.BASE_URL}api/testimonials`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newTestimonial),
